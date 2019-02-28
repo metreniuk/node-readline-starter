@@ -15,6 +15,17 @@ rl.on("line", line => {
 
 // node index.js < a.in > a.out
 
+let graph = {}
+
 function main(input) {
-  console.log("hi ", input)
+  let photos = input.slice(1).map((x, id) => {
+    let [orientation, tagsCount, ...tags] = x.split(" ")
+    return {
+      id,
+      orientation,
+      tagsCount,
+      tags,
+    }
+  })
+  console.log(photos)
 }
